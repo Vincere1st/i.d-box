@@ -1,5 +1,6 @@
 <?php
-require '../connec.php';
+
+include 'modal.php';
 $pdo = new PDO(DSN, USER, PASS);
 $pdo2 = new PDO(DSN, USER, PASS);
 $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
@@ -30,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 /******************** Show the ideas ********************/
-$query = "SELECT * FROM idea";
+$query = "SELECT * FROM idea WHERE category = 'La vie a la wild'";
 $res = $pdo->query($query);
 $ideas = $res->fetchAll(PDO::FETCH_ASSOC);
 ?>

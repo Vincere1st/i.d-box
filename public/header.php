@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 
         <title>I.d Box</title>
-    </head> <body>
+    </head>
+    <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="index.php">I.d B<i class="far fa-lightbulb"></i>x</a>
@@ -25,19 +26,19 @@
 
 
                 <li class="nav-item veilles">
-                    <a class="nav-link" href="#"><span class="veilles">Sujet de veilles</span><span class="bar ml-3"></span></a>
+                    <a class="nav-link" href="veille.php"><span class="veilles">Sujet de veilles</span><span class="bar ml-3"></span></a>
                 </li>
 
 
 
                 <li class="nav-item événements">
-                    <a class="nav-link" href="#"><span class="événements">Evénements entre Wilders</span><span class="bar ml-3"></span></a>
+                    <a class="nav-link" href="envents.php"><span class="événements">Evénements entre Wilders</span><span class="bar ml-3"></span></a>
                 </li>
 
 
 
                 <li class="nav-item vie">
-                    <a class="nav-link" href="#"><span class="vie a la wild">La vie à la Wild</span><span class="bar ml-3"></span></a>
+                    <a class="nav-link" href="wildlife.php"><span class="vie a la wild">La vie à la Wild</span><span class="bar ml-3"></span></a>
                 </li>
 
             </ul>
