@@ -10,43 +10,42 @@
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
 
-    <title>I.d Box</title>
-</head>
-<body>
+        <title>I.d Box</title>
+    </head> <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="index.php">I.d B<i class="far fa-lightbulb"></i>x</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.php">I.d B<i class="far fa-lightbulb"></i>x</a>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse justify-content-center" id="navbarColor01">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarColor01">
 
-        <ul class="navbar-nav">
-
-
-            <li class="nav-item veilles">
-                <a class="nav-link" href="#"><span class="veilles">Sujet de veilles</span><span class="bar ml-3"></span></a>
-            </li>
+            <ul class="navbar-nav">
 
 
-
-            <li class="nav-item événements">
-                <a class="nav-link" href="#"><span class="événements">Evénements entre Wilders</span><span class="bar ml-3"></span></a>
-            </li>
+                <li class="nav-item veilles">
+                    <a class="nav-link" href="#"><span class="veilles">Sujet de veilles</span><span class="bar ml-3"></span></a>
+                </li>
 
 
 
-            <li class="nav-item vie">
-                <a class="nav-link" href="#"><span class="vie a la wild">La vie à la Wild</span><span class="bar ml-3"></span></a>
-            </li>
+                <li class="nav-item événements">
+                    <a class="nav-link" href="#"><span class="événements">Evénements entre Wilders</span><span class="bar ml-3"></span></a>
+                </li>
 
-        </ul>
 
-    </div>
-    <a href="#exampleModal" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-lightbulb"></i></a>
 
-</nav>
+                <li class="nav-item vie">
+                    <a class="nav-link" href="#"><span class="vie a la wild">La vie à la Wild</span><span class="bar ml-3"></span></a>
+                </li>
+
+            </ul>
+
+        </div>
+        <a href="#exampleModal" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-lightbulb"></i></a>
+
+    </nav>
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

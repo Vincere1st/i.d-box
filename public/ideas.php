@@ -1,6 +1,7 @@
 <?php
 require '../connec.php';
 $pdo = new PDO(DSN, USER, PASS);
+$pdo2 = new PDO(DSN, USER, PASS);
 $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 /*********************Insert comment*********************/
 
@@ -25,7 +26,9 @@ $statement->bindValue(':category', $data['category'], PDO::PARAM_STR);
 $statement->bindValue(':color', $data['color'], PDO::PARAM_STR);
 $statement->execute();
 */
-
+$query2 = "SELECT * FROM comment JOIN idea ON idea.id = comment.idea_id";
+$statement2 = $pdo2->query($query2);
+$commentJoin = $statement2->fetchAll(PDO::FETCH_ASSOC);
 $errors = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -41,6 +44,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $statement->bindValue(':idea_id', $_POST['idea_id'], PDO::PARAM_STR);
         $statement->bindValue(':comment', $_POST['comment'], PDO::PARAM_STR);
         $statement->execute();
+
+
         header('Location:ideas.php');
     }
 }
@@ -70,7 +75,7 @@ $ideas = $res->fetchAll(PDO::FETCH_ASSOC);
     <header>
         <?php include 'header.php'; ?>
     </header>
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
 <?php
 foreach ($ideas as $key => $idea) {
@@ -86,6 +91,23 @@ foreach ($ideas as $key => $idea) {
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#id<?= $idea['id'] ?>">
                 Ajouter un commentaire
             </button>
+            <p>
+                <a data-toggle="collapse" href="#collapse<?= $idea['id'] ?>" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    Voir les commentaires
+                </a>
+            <div class="collapse" id="collapse<?= $idea['id'] ?>">
+                <div class="card card-body">
+                   <?php foreach ($commentJoin as  $key => $comment){
+                       if($idea['id'] == $comment['idea_id']) {
+
+                           //echo $idea['id'];
+                           //echo $comment['idea_id'];
+                           echo $comment['comment'];
+                       }
+                } ?>
+                </div>
+            </div>
+            </p>
   </div>
 </div>
             <!-- Modal -->
