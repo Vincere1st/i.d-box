@@ -13,7 +13,6 @@
     <title>Hello, world!</title>
 </head>
 
-<h1>I.d Box</h1>
 <?php
 require '../connec.php';
 include '../src/functions.php';
@@ -65,7 +64,7 @@ echo $data["content"];
 }
 ?>
 
-<a href="#exampleModal" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-lightbulb"></i></a>
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
