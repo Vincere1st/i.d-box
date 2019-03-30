@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <title>I.d Box</title>
 </head>
@@ -16,34 +17,30 @@
 <footer>
 
 
-    <div class="école">
+<div class="container">
+    <div class="row justify-content-between">
+        <div class="WCS col-4">
+            <a href="https://wildcodeschool.fr/" target="_blank">Wild Code School</a>
+            <img src="https://i.goopics.net/a2kgy.png" class="logo WCS" alt="logo de la wild">
+        </div>
+        <div class="hyperlink col-4">
 
-        <form>
-            <div class="form-group col-3 row">
-                <a href="https://wildcodeschool.fr/" target="_blank">Wild Code School</a>
+            <div class="form-group">
+                <a href="https://linkedin.com/in/emilie-s-691b5817/" target="_blank"><span class="hyperlink">Emilie Serre</span><span class="bar ml-3"></span><i class="fab fa-linkedin"></i></a>
             </div>
-        </form>
+            <div class="form-group">
+                <a href="#" target="_blank"><span class="hyperlink">#</span><span class="bar ml-3"></span><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="form-group">
+                <a href="#" target="_blank"><span class="hyperlink">#</span><span class="bar ml-3"></span><i class="fab fa-linkedin"></i></a>
+            </div>
+
+        </div>
+        <div class="ampoule col-4">
+            <i class="far fa-lightbulb"></i>
+        </div>
     </div>
-
-    <div class="liens collaborateurs">
-        <form>
-            <div class="form-group">
-                <a href="https://linkedin.com/in/emilie-s-691b5817/" target="_blank">Emilie Serre</a>
-            </div>
-
-
-            <div class="form-group">
-                <a href="#" target="_blank">#</a>
-            </div>
-
-            <div class="form-group">
-                <a href="#" target="_blank">#</a>
-            </div>
-
-
-        </form>
-    </div>
-
+</div>
 
 </footer>
 
