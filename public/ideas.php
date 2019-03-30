@@ -109,7 +109,7 @@ foreach ($ideas as $key => $idea) {
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer
                                     </button>
-                                    <button type="submit" class="btn btn-primary">Publier votre commentaire</button>
+                                    <button type="submit" class="btn btn-success">Publier votre commentaire</button>
                                 </div>
                             </div>
                         </div>
