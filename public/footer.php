@@ -20,7 +20,7 @@
 <div class="container">
     <div class="row justify-content-between">
         <div class="WCS col-4">
-            <a href="https://wildcodeschool.fr/" target="_blank">Wild Code School</a>
+            <a href="https://wildcodeschool.fr/" class="school" target="_blank">Wild Code School</a>
             <img src="https://i.goopics.net/a2kgy.png" class="logo WCS" alt="logo de la wild">
         </div>
         <div class="hyperlink col-4">

@@ -1,3 +1,4 @@
+/***********************modal*********************/
 
 .modal{
     font-family: 'Gloria Hallelujah', cursive;
@@ -33,16 +34,16 @@
     background-color: #66B0BE;
 }
 
-/*.fa-lightbulb{
-    color:  #e27209;
-    font-size: 10em;
-    margin-right: 1em;
-}*/
+.card {
+    padding: 1em;
+    margin: 1em;
+}
 
 .form-control {
     background-color: lightgray;
 }
 
+/*********************header******************/
 
 .navbar{
     padding-top: 2%;
@@ -64,16 +65,16 @@
     color: #FFD7B1;
 }
 .nav-link .veilles{
-    color: #FFD7B1;
+    color: #66B0BE;
 }
 .nav-link .veilles:hover{
-    color: #66B0BE;
+    color: #CE9FE1;
 }
 .nav-link .événements{
-    color: #66B0BE;
+    color: #EC552D;
 }
 .nav-link .événements:hover{
-    color: #CE9FE1;
+    color: #FFD7B1;
 }
 .nav-link .vie{
     color: #37BA30;
@@ -82,10 +83,7 @@
     color: #A9EEA5;
 }
 
-.card {
-    padding: 1em;
-    margin: 1em;
-}
+/***************footer*****************/
 
 footer{
     background-color: #343a40;
@@ -95,6 +93,11 @@ footer{
 }
 footer a:hover{
     text-decoration: none;
+    color:#6CA3B0;
+}
+
+footer a{
+    color:#ec6d6a;
 }
 .ampoule{
     font-size: 5em;
@@ -102,5 +105,26 @@ footer a:hover{
     padding-left: 15%;
     padding-right: 15%;
 }
-
-
+.fa, .fas{
+    font-size: 4em;
+    color:#fE1B00;
+    margin-right: 5%;
+}
+.fa, .fas:hover{
+    color:#FFEC00;
+}
+.a{
+    color:#CA4441;
+}
+.hyperlink{
+    color:#66B0BE;
+}
+.hyperlink:hover{
+    color: #CE9FE1
+}
+.fab{
+    color:#66B0BE;
+}
+.fab:hover{
+    color: #CE9FE1
+}
