@@ -5,27 +5,6 @@ $pdo2 = new PDO(DSN, USER, PASS);
 $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 /*********************Insert comment*********************/
 
-/*
-$data['title']= 'un titre6';
-$data['lastname']= 'un prénom6';
-$data['firstname'] = 'un nom6';
-$data['content']= 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sesse cillum dolore eu fugiat nulla pariatur.';
-$data['category']= 'La vie à la Wild';
-$data['color']= 'blue';
-
-
-$query = "INSERT INTO idea (title, lastname, firstname, content, category, color)
-          VALUES (:title, :lastname, :firstname, :content, :category, :color)";
-$statement = $pdo->prepare($query);
-
-$statement->bindValue(':title', $data['title'], PDO::PARAM_STR);
-$statement->bindValue(':lastname', $data['lastname'], PDO::PARAM_STR);
-$statement->bindValue(':firstname', $data['firstname'], PDO::PARAM_STR);
-$statement->bindValue(':content', $data['content'], PDO::PARAM_STR);
-$statement->bindValue(':category', $data['category'], PDO::PARAM_STR);
-$statement->bindValue(':color', $data['color'], PDO::PARAM_STR);
-$statement->execute();
-*/
 $query2 = "SELECT * FROM comment JOIN idea ON idea.id = comment.idea_id";
 $statement2 = $pdo2->query($query2);
 $commentJoin = $statement2->fetchAll(PDO::FETCH_ASSOC);
@@ -100,8 +79,6 @@ foreach ($ideas as $key => $idea) {
                    <?php foreach ($commentJoin as  $key => $comment){
                        if($idea['id'] == $comment['idea_id']) {
 
-                           //echo $idea['id'];
-                           //echo $comment['idea_id'];
                            echo $comment['comment'];
                        }
                 } ?>
