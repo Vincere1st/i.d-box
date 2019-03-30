@@ -22,6 +22,13 @@ $pdo = new PDO(DSN, USER, PASS);
 $pdo2 = new PDO(DSN, USER, PASS);
 $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $couleurs= ['green','blue','pink'];
+    $nbrcouleurs = count($couleurs) -1;
+    $rand = rand(0, $nbrcouleurs);
+    $rand1 = rand(0, $nbrcouleurs);
+    $rand2 = rand(0, $nbrcouleurs);
+    $lacouleur = [$couleurs[$rand]];
+    /*var_dump($lacouleur);*/
     $data = cleanInput($_POST);
 
     if (empty($data["firstname"])) {
@@ -47,21 +54,17 @@ echo $data["content"];
         $statement->bindValue(':firstname', $data['firstname'], PDO::PARAM_STR);
         $statement->bindValue(':content', $data['content'], PDO::PARAM_STR);
         $statement->bindValue(':category', $data['category'], PDO::PARAM_STR);
+        /*$statement->bindValue(':color', $lacouleur, PDO::PARAM_STR);*/
         $statement->execute();
 
         $query2 = "SELECT * FROM comment JOIN idea ON idea.id = comment.idea_id";
         $statement2 = $pdo2->query($query2);
         $commentJoin = $statement2->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($commentJoin);
     }
 
 }
 ?>
-<!-- Button trigger modal -->
-<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-</button>-->
-<!--<i class="fas fa-lightbulb"></i>-->
+
 <a href="#exampleModal" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-lightbulb"></i></a>
 
 <!-- Modal -->
@@ -89,7 +92,7 @@ echo $data["content"];
                     <div class="form-group">
                         <label for="categorie">Choisi ta catégorie</label>
                         <select class="form-control" id="categorie" name="category">
-                            <option>La vie a la Wild</option>
+                            <option>La vie à la Wild</option>
                             <option>Evènements entre Wilders</option>
                             <option>Sujet de veille</option>
                         </select>
@@ -102,18 +105,11 @@ echo $data["content"];
                     <div class="form-group">
                         <label for="content">Example textarea</label>
                         <span class="error">* <?php if (isset($errors["content"])){echo $errors["content"];}?></span>
-                        <textarea class="form-control" id="content" rows="3" name="content" placeholder="Propose ton idéé"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="content">Example textarea</label>
-                        <textarea class="form-control" id="content" rows="3" name="" ></textarea>
+                        <textarea class="form-control" id="content" rows="3" name="content" placeholder="Propose ton idée"></textarea>
                     </div>
                     <button type="submit" class="btn btn-idea">Soumettre l'idée</button>
                 </form>
             </div>
-            <!--<div class="modal-footer">
-                <button type="button" class="btn btn-idea">Soumettre l'idée</button>
-            </div>-->
         </div>
     </div>
 </div>
