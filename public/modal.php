@@ -19,6 +19,7 @@ require '../connec.php';
 include '../src/functions.php';
 $errors = [];
 $pdo = new PDO(DSN, USER, PASS);
+$pdo2 = new PDO(DSN, USER, PASS);
 $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $data = cleanInput($_POST);
@@ -47,6 +48,11 @@ echo $data["content"];
         $statement->bindValue(':content', $data['content'], PDO::PARAM_STR);
         $statement->bindValue(':category', $data['category'], PDO::PARAM_STR);
         $statement->execute();
+
+        $query2 = "SELECT * FROM comment JOIN idea ON idea.id = comment.idea_id";
+        $statement2 = $pdo2->query($query2);
+        $commentJoin = $statement2->fetchAll(PDO::FETCH_ASSOC);
+        var_dump($commentJoin);
     }
 
 }
