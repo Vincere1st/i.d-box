@@ -1,9 +1,11 @@
 <?php
-require '../connec.php';
+
+include 'modal.php';
 $pdo = new PDO(DSN, USER, PASS);
 $pdo2 = new PDO(DSN, USER, PASS);
 $pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 /*********************Insert comment*********************/
+
 
 $query2 = "SELECT * FROM comment JOIN idea ON idea.id = comment.idea_id";
 $statement2 = $pdo2->query($query2);
@@ -29,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 /******************** Show the ideas ********************/
-$query = "SELECT * FROM idea";
+$query = "SELECT * FROM idea WHERE category = 'Evènements entre Wilders'";
 $res = $pdo->query($query);
 $ideas = $res->fetchAll(PDO::FETCH_ASSOC);
 ?>
@@ -38,30 +40,6 @@ $ideas = $res->fetchAll(PDO::FETCH_ASSOC);
 
 <body>
 
-
-?>
-    <div class="card <?= $idea['color'] ?>" style = "width: 18rem;" >
-        <div class="card-body" >
-            <h5 class="card-title" > <?= $idea['title']; ?> </h5 >
-            <h6 class="card-subtitle mb-2 text-muted" ><?= $idea['lastname'] . ' ' .  $idea['firstname']; ?></h6 >
-            <h6 class="card-subtitle" > <?= $idea['category']; ?></h6 >
-            <p><?= $idea['content']; ?></p>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#id<?= $idea['id'] ?>">
-                Ajouter un commentaire
-            </button>
-            <p>
-                <a data-toggle="collapse" href="#collapse<?= $idea['id'] ?>" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    Voir les commentaires
-                </a>
-            <div class="collapse" id="collapse<?= $idea['id'] ?>">
-                <div class="card card-body">
-                   <?php foreach ($commentJoin as  $key => $comment){
-                       if($idea['id'] == $comment['idea_id']) {
-
-                           echo $comment['comment'];
-                       }
-                } ?>
 <header>
     <?php include 'header.php'; ?>
 </header>
@@ -69,6 +47,7 @@ $ideas = $res->fetchAll(PDO::FETCH_ASSOC);
     <div class="row">
         <?php
         foreach ($ideas as $key => $idea) {
+
             ?>
             <div class="card <?= $idea['color'] ?>" style="width: 18rem;">
                 <div class="card-body">
@@ -77,7 +56,7 @@ $ideas = $res->fetchAll(PDO::FETCH_ASSOC);
                     <h6 class="card-subtitle"> <?= $idea['category']; ?></h6>
                     <p><?= $idea['content']; ?></p>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                    <button type="button" class="btn btn-secondary" data-toggle="modal"
                             data-target="#id<?= $idea['id'] ?>">
                         Ajouter un commentaire
                     </button>
