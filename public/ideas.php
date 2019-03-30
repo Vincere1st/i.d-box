@@ -1,7 +1,31 @@
 <?php
 require '../connec.php';
 $pdo = new PDO(DSN, USER, PASS);
+$pdo->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 /*********************Insert comment*********************/
+
+/*
+$data['title']= 'un titre6';
+$data['lastname']= 'un prénom6';
+$data['firstname'] = 'un nom6';
+$data['content']= 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sesse cillum dolore eu fugiat nulla pariatur.';
+$data['category']= 'La vie à la Wild';
+$data['color']= 'blue';
+
+
+$query = "INSERT INTO idea (title, lastname, firstname, content, category, color)
+          VALUES (:title, :lastname, :firstname, :content, :category, :color)";
+$statement = $pdo->prepare($query);
+
+$statement->bindValue(':title', $data['title'], PDO::PARAM_STR);
+$statement->bindValue(':lastname', $data['lastname'], PDO::PARAM_STR);
+$statement->bindValue(':firstname', $data['firstname'], PDO::PARAM_STR);
+$statement->bindValue(':content', $data['content'], PDO::PARAM_STR);
+$statement->bindValue(':category', $data['category'], PDO::PARAM_STR);
+$statement->bindValue(':color', $data['color'], PDO::PARAM_STR);
+$statement->execute();
+*/
+
 $errors = [];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -12,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $query = "INSERT INTO comment (idea_id, comment)
           VALUES (:idea_id, :comment)";
-        var_dump($query);
         $statement = $pdo->prepare($query);
 
         $statement->bindValue(':idea_id', $_POST['idea_id'], PDO::PARAM_STR);
@@ -42,30 +65,28 @@ $ideas = $res->fetchAll(PDO::FETCH_ASSOC);
 
         <title>Hello, world!</title>
     </head>
-    <body>
+<body>
     <h1>Hello, world!</h1>
     <header>
         <?php include 'header.php'; ?>
     </header>
     <div class="container-fluid">
-        <?php
-        foreach ($ideas as $key => $idea) {
+        <div class="row">
+<?php
+foreach ($ideas as $key => $idea) {
 
-            //echo $key;
-            echo $idea['id'];
-            echo $idea['title'];
-            echo $idea['lastname'];
-            echo $idea['firstname'];
-            echo $idea['content'];
-            echo $idea['category'];
-            echo $idea['color'];
-            ?>
-
+?>
+    <div class="card <?= $idea['color'] ?>" style = "width: 18rem;" >
+        <div class="card-body" >
+            <h5 class="card-title" > <?= $idea['title']; ?> </h5 >
+            <h6 class="card-subtitle mb-2 text-muted" ><?= $idea['lastname']; ?> . ' ' . <?= $idea['firstname']; ?></h6 >
+            <h6 class="card-subtitle" > <?= $idea['category']; ?></h6 >
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#id<?= $idea['id'] ?>">
                 Ajouter un commentaire
             </button>
-
+  </div>
+</div>
             <!-- Modal -->
             <form method="post" action="ideas.php">
                 <div class="form-group">
@@ -98,6 +119,7 @@ $ideas = $res->fetchAll(PDO::FETCH_ASSOC);
         }
         ?>
     </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -114,21 +136,8 @@ $ideas = $res->fetchAll(PDO::FETCH_ASSOC);
     </html>
 
 
-<?php
-/*
-$query = "INSERT INTO comment (title, lastname, firstname, content, category, color)
-          VALUES (:title, :lastname, :firstname, :content, :category, :color)";
-$statement = $pdo->prepare($query);
 
-$statement->bindValue(':title', $data['title'], PDO::PARAM_STR);
-$statement->bindValue(':lastname', $data['lastname'], PDO::PARAM_STR);
-$statement->bindValue(':firstname', $data['firstname'], PDO::PARAM_STR);
-$statement->bindValue(':content', $data['content'], PDO::PARAM_STR);
-$statement->bindValue(':category', $data['category'], PDO::PARAM_STR);
-$statement->bindValue(':color', $data['color'], PDO::PARAM_STR);
-$statement->execute();
 
-var_dump($students);*/
 
 
 
