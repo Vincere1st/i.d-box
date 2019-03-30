@@ -56,7 +56,7 @@ $ideas = $res->fetchAll(PDO::FETCH_ASSOC);
                     <h6 class="card-subtitle"> <?= $idea['category']; ?></h6>
                     <p><?= $idea['content']; ?></p>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                    <button type="button" class="btn btn-secondary" data-toggle="modal"
                             data-target="#id<?= $idea['id'] ?>">
                         Ajouter un commentaire
                     </button>
