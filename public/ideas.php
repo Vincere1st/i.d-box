@@ -66,7 +66,7 @@ $ideas = $res->fetchAll(PDO::FETCH_ASSOC);
         <title>Hello, world!</title>
     </head>
 <body>
-    <h1>Hello, world!</h1>
+
     <header>
         <?php include 'header.php'; ?>
     </header>
@@ -79,8 +79,9 @@ foreach ($ideas as $key => $idea) {
     <div class="card <?= $idea['color'] ?>" style = "width: 18rem;" >
         <div class="card-body" >
             <h5 class="card-title" > <?= $idea['title']; ?> </h5 >
-            <h6 class="card-subtitle mb-2 text-muted" ><?= $idea['lastname']; ?> . ' ' . <?= $idea['firstname']; ?></h6 >
+            <h6 class="card-subtitle mb-2 text-muted" ><?= $idea['lastname'] . ' ' .  $idea['firstname']; ?></h6 >
             <h6 class="card-subtitle" > <?= $idea['category']; ?></h6 >
+            <p><?= $idea['content']; ?></p>
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#id<?= $idea['id'] ?>">
                 Ajouter un commentaire
@@ -120,7 +121,7 @@ foreach ($ideas as $key => $idea) {
         ?>
     </div>
     </div>
-
+    <?php include 'footer.php'; ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

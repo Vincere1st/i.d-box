@@ -26,8 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rand = rand(0, $nbrcouleurs);
     $rand1 = rand(0, $nbrcouleurs);
     $rand2 = rand(0, $nbrcouleurs);
-    $lacouleur = [$couleurs[$rand]];
-    /*var_dump($lacouleur);*/
+    $lacouleur = $couleurs[$rand];
+    var_dump($lacouleur);
     $data = cleanInput($_POST);
 
     if (empty($data["firstname"])) {
@@ -45,15 +45,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 echo $data["content"];
     if (empty($errors)) {
 
-        $query = "INSERT INTO idea (title, lastname, firstname, content, category)
-      VALUES (:title, :lastname, :firstname, :content, :category)";
+        $query = "INSERT INTO idea (title, lastname, firstname, content, category, color)
+      VALUES (:title, :lastname, :firstname, :content, :category, :color)";
         $statement = $pdo->prepare($query);
         $statement->bindValue(':title', $data['title'], PDO::PARAM_STR);
         $statement->bindValue(':lastname', $data['lastname'], PDO::PARAM_STR);
         $statement->bindValue(':firstname', $data['firstname'], PDO::PARAM_STR);
         $statement->bindValue(':content', $data['content'], PDO::PARAM_STR);
         $statement->bindValue(':category', $data['category'], PDO::PARAM_STR);
-        /*$statement->bindValue(':color', $lacouleur, PDO::PARAM_STR);*/
+        $statement->bindValue(':color', $lacouleur, PDO::PARAM_STR);
         $statement->execute();
 
         $query2 = "SELECT * FROM comment JOIN idea ON idea.id = comment.idea_id";

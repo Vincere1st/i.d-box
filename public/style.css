@@ -21,6 +21,18 @@
     background-color: #e27209;
 }
 
+.green {
+    background-color: #A9EEA5;
+}
+
+.pink {
+    background-color: #CE9FE1;
+}
+
+.blue{
+    background-color: #66B0BE;
+}
+
 /*.fa-lightbulb{
     color:  #e27209;
     font-size: 10em;
@@ -68,6 +80,11 @@
 }
 .nav-link .vie:hover{
     color: #A9EEA5;
+}
+
+.card {
+    padding: 1em;
+    margin: 1em;
 }
 
 footer{
