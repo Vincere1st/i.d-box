@@ -1,0 +1,47 @@
+
+.navbar{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    font-family:'Gloria Hallelujah', cursive;
+}
+
+.navbar-brand{
+    font-size: 5em;
+}
+.navbar-expand-lg .navbar-collapse{
+    font-size: 1.7em;
+}
+.navbar-dark .navbar-brand{
+    color: #e27209;
+}
+.navbar-dark .navbar-brand:hover{
+    color: #FFD7B1;
+}
+.nav-link .veilles{
+    color: #FFD7B1;
+}
+.nav-link .veilles:hover{
+    color: #66B0BE;
+}
+.nav-link .événements{
+    color: #66B0BE;
+}
+.nav-link .événements:hover{
+    color: #CE9FE1;
+}
+.nav-link .vie{
+    color: #37BA30;
+}
+.nav-link .vie:hover{
+    color: #A9EEA5;
+}
+.form-group{
+    padding-top: 3%;
+    margin-left: 5%;
+    font-size: 2em;
+}
+footer{
+    background-color: #343a40;
+    font-family:'Gloria Hallelujah', cursive;
+
+}
