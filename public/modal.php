@@ -24,8 +24,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $couleurs= ['green','blue','pink'];
     $nbrcouleurs = count($couleurs) -1;
     $rand = rand(0, $nbrcouleurs);
-    $rand1 = rand(0, $nbrcouleurs);
-    $rand2 = rand(0, $nbrcouleurs);
     $lacouleur = $couleurs[$rand];
     $data = cleanInput($_POST);
 
@@ -58,8 +56,7 @@ echo $data["content"];
         $query2 = "SELECT * FROM comment JOIN idea ON idea.id = comment.idea_id";
         $statement2 = $pdo2->query($query2);
         $commentJoin = $statement2->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($commentJoin);
-        /*header('location:ideas.php');*/
+        header('location:ideas.php');
     }
 
 }
@@ -103,7 +100,7 @@ echo $data["content"];
                         <input type="text" class="form-control" id="title" placeholder="Trouvez une idée de titre ;)" name="title">
                     </div>
                     <div class="form-group">
-                        <label for="content">Example textarea</label>
+                        <label for="content">Post-it tes idées ici</label>
                         <span class="error">* <?php if (isset($errors["content"])){echo $errors["content"];}?></span>
                         <textarea class="form-control" id="content" rows="3" name="content" placeholder="Propose ton idée"></textarea>
                     </div>

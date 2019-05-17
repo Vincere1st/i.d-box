@@ -17,13 +17,13 @@
 <footer>
 
 
-<div class="container">
+<div class="container-fluid">
     <div class="row justify-content-between">
-        <div class="WCS col-4">
-            <a href="https://wildcodeschool.fr/" class="school" target="_blank">Wild Code School</a>
-            <img src="https://i.goopics.net/a2kgy.png" class="logo WCS" alt="logo de la wild">
+        <div class="WCS col-3">
+                <a href="https://wildcodeschool.fr/" class="school" target="_blank">Wild Code School</a>
+                <img src="https://i.goopics.net/a2kgy.png" class="logo WCS" alt="logo de la wild">
         </div>
-        <div class="hyperlink col-4">
+        <div class="hyperlink col-3 justify-content-center">
 
             <div class="form-group">
                 <a href="https://linkedin.com/in/emilie-s-691b5817/" target="_blank"><span class="hyperlink">Emilie Serre</span><span class="bar ml-3"></span><i class="fab fa-linkedin"></i></a>
@@ -36,7 +36,7 @@
             </div>
 
         </div>
-        <div class="ampoule col-4">
+        <div class="ampoule col-2">
             <i class="far fa-lightbulb"></i>
         </div>
     </div>

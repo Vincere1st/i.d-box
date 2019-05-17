@@ -69,7 +69,7 @@ $ideas = $res->fetchAll(PDO::FETCH_ASSOC);
                         <div class="card card-body">
                             <?php foreach ($commentJoin as $key => $comment) {
                                 if ($idea['id'] == $comment['idea_id']) {
-                                    echo $comment['comment'];
+                                    echo $comment['comment'] . '<br>';
                                 }
                             } ?>
                         </div>
