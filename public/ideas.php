@@ -39,29 +39,7 @@ $ideas = $res->fetchAll(PDO::FETCH_ASSOC);
 <body>
 
 
-?>
-    <div class="card <?= $idea['color'] ?>" style = "width: 18rem;" >
-        <div class="card-body" >
-            <h5 class="card-title" > <?= $idea['title']; ?> </h5 >
-            <h6 class="card-subtitle mb-2 text-muted" ><?= $idea['lastname'] . ' ' .  $idea['firstname']; ?></h6 >
-            <h6 class="card-subtitle" > <?= $idea['category']; ?></h6 >
-            <p><?= $idea['content']; ?></p>
-            <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#id<?= $idea['id'] ?>">
-                Ajouter un commentaire
-            </button>
-            <p>
-                <a data-toggle="collapse" href="#collapse<?= $idea['id'] ?>" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    Voir les commentaires
-                </a>
-            <div class="collapse" id="collapse<?= $idea['id'] ?>">
-                <div class="card card-body">
-                   <?php foreach ($commentJoin as  $key => $comment){
-                       if($idea['id'] == $comment['idea_id']) {
 
-                           echo $comment['comment'];
-                       }
-                } ?>
 <header>
     <?php include 'header.php'; ?>
 </header>
