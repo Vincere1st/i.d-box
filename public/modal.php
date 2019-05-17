@@ -56,6 +56,7 @@ echo $data["content"];
         $query2 = "SELECT * FROM comment JOIN idea ON idea.id = comment.idea_id";
         $statement2 = $pdo2->query($query2);
         $commentJoin = $statement2->fetchAll(PDO::FETCH_ASSOC);
+
         header('location:ideas.php');
     }
 
